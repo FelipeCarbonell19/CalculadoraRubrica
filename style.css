@@ -1,0 +1,141 @@
+:root {
+  --naranja: #ffa500;
+  --cianbrillante: #1ebcd4;
+  --amarillo: #cede1f;
+  --blanco: #fff;
+  --negro: #000;
+  --gris: #333;
+}
+
+body {
+  background-color: lightcyan;
+  margin: 4rem;
+}
+
+.nombre {
+  font-family: "Helvetica";
+  font-size: 35px;
+}
+
+.contenedor {
+  margin: 0 auto;
+  max-width: 290.3px;
+}
+
+.calculadora {
+  background-color: lightskyblue;
+  border-radius: 20px;
+  border: 1px solid #000;
+}
+
+.resultado {
+  background-color: rgb(255, 255, 255);
+  margin: 20px;
+  padding: 20px 0 0 0;
+  border-radius: 5px;
+}
+
+.numeros {
+  text-align: right;
+  border-radius: 50px;
+  margin-right: 10px;
+  font-family: "digital";
+  font-size: 40px;
+}
+
+.botonesLimpiar {
+  display: flex;
+  justify-content: center;
+}
+
+.botonesLimpiar input {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  color: white;
+}
+
+.btn-ac {
+  background-color: var(--cianbrillante);
+}
+
+.btn-ch {
+  background-color: var(--cianbrillante);
+}
+
+.btn-ac,
+.btn-ch {
+  cursor: pointer;
+}
+
+.botones-calculadora {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  margin: 20px;
+}
+
+.botones-calculadora input {
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 25px;
+  background-color: lightblue;
+  color: var(--negro);
+  border: none;
+}
+
+.x {
+  font-size: 20px;
+}
+
+.historial {
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.titulo-historial {
+  background-color: var(--negro);
+  color: white;
+  padding: 15px;
+}
+
+.botones-calculadora input:hover {
+  background-color: var(--blanco);
+}
+
+.btn-sumar:hover {
+  background-color: var(--blanco);
+}
+
+.btn-operador:hover {
+  background-color: var(--naranja);
+}
+
+.btn-operador:hover {
+  background-color: var(--naranja);
+}
+
+.btn-ac:hover {
+  background-color: var(--blanco);
+}
+
+.btn-ch:hover {
+  background-color: var(--blanco);
+}
+
+/**MEDIA QUERYS**/
+
+@media (min-width: 768px) {
+  .contenedor {
+    max-width: 550px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contenedor-calculadora {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+  }
+}
