@@ -7,8 +7,11 @@ let display = document.querySelector(".numeros"),
   historial = "";
 
 function Numeros(numero) {
+  //Tomamos el numero guardado en el argumento
   if (valor == "0" || iniciar) {
+    //Iniciaomos un numero
     if (numero == ".") {
+      //Por si escribimos 0 al comiezo
       display.innerHTML = "0.";
       valor = "0.";
       historial += "0.";
@@ -19,7 +22,9 @@ function Numeros(numero) {
       historial += numero;
     }
   } else {
+    //Continuamos agregando numero
     if (numero == "." && punto == false) {
+      //Si escribimos un punto por primera vez
       display.innerHTML += numero;
       valor += numero;
       historial += numero;
@@ -36,9 +41,9 @@ function Numeros(numero) {
 }
 
 function operaciones(tipo) {
-  operacionIgual();
-  contador = valor;
-  signo = tipo;
+  operacionIgual();// Si hay alguna op pendiente
+  contador = valor;//Ponemos el numero a esperar
+  signo = tipo;//Guardamos operacion
   iniciar = true;
   punto = false;
   historial += tipo;
@@ -46,11 +51,12 @@ function operaciones(tipo) {
 
 function operacionIgual() {
   if (signo == null) {
-    display.innerHTML = valor;
+    //No hay resultado al pulsar
+    display.innerHTML = valor; // mostramos el mismmo numero
   } else {
-    var cadena = contador + signo + valor;
-    sol = eval(cadena);
-    display.innerHTML = sol;
+    var cadena = contador + signo + valor;//escribimos la operacion en una cadena
+    sol = eval(cadena); //Convertimos la cadena a codigo
+    display.innerHTML = sol; //Mostramos
     valor = sol;
     signo = null;
     iniciar = true;
@@ -65,12 +71,13 @@ function agregarHistorial() {
     historial.indexOf("/") == -1
   ) {
   } else {
-    let historialOperaciones = document.createElement("LI");
+    //Si no hay ninguna operacion no agrega nada
+    let historialOperaciones = document.createElement("LI"); //Creamos lista
     historialOperaciones.style.setProperty("font-size", "20px");
     historialOperaciones.style.setProperty("text-align", "center");
     historialOperaciones.style.setProperty("margin-right", "10px");
     historialOperaciones.innerHTML = historial + " = " + "<b>" + valor + "</b>";
-    document.querySelector(".operaciones").appendChild(historialOperaciones);
+    document.querySelector(".operaciones").appendChild(historialOperaciones); //seleccionamos el padre (ul) y le agregamos la operacion
     historial = valor;
   }
 }
